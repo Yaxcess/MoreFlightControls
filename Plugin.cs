@@ -83,7 +83,7 @@ public class Plugin : BaseUnityPlugin
         var cam = (CaAvatarCam.CamInterpData[])mCamData.GetValue(__instance);
         for (int i = 0; i < cam.Length; ++i)
         {
-            cam[i].lookQuat *= new Quaternion(0.5f, 1f, 0f, 1f);
+            cam[i].lookQuat = new Quaternion(cam[i].lookQuat.x * 0.5f, cam[i].lookQuat.y, 0f, cam[i].lookQuat.w);
         }
         return true;
     }
